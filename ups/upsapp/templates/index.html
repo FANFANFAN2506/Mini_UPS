@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+"MiniUPS"
+{% endblock %}
+
+
+{% block content %}
+<h1>"Together We Advanced!"</h1>
+<p>Welcome to <b><i>MiniUPS</i></b>, a website developed by <em><b>Blue Devils: Xincheng Zhong, Fan Yang!</b></em></p>
+
+<p style="font-size:x-large">You can do the following using our Website:</p>
+<ul style="font-size: large;">
+    <br>
+    <li> <a href="{%url 'register'%}">Create</a> Your <b>UPS Account</b>, and reference in Amazon</li>
+    <br>
+    <li> View all your <b>Packages</b> after <a href="{% url 'login' %}?next={% url 'home'%}">login</a></li>
+    <br>
+    <li> <a href="{%url 'package-find'%}">Track</a> Your Package by specifying the Package Tracking number</li>
+    <br>
+</ul>
+<h3 class="adver">Fun fact of our MiniUPS:</h3>
+<p class="adver">There are total <b class="adver">{{user_num}}</b> users using our website!</p>
+<p class="adver">Total <b class="adver">{{shipment_num}}</b> shipments have been delivered!</p>
+<p class="adver">Packages are delivered into <b class="adver">{{dest_num}}</b> different destinations! </p>
+{% endblock %}

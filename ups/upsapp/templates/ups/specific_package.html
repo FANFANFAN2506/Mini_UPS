@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Ride detail{% endblock %}
+
+{% block content %}
+<h1>Ride detail</h1>
+
+{%if packages%}
+<div style="margin-left:20px;margin-top:20px">
+    <h3>The Package is in <i style="font-weight: bold; color: blue;">{{ packages.status }}</i> status:
+    </h3>
+    <p><strong>Package ID:</strong> {{ packages.packageid}}</p>
+    <p><strong>Package Name:</strong> {{ packages.packagename }}</p>
+    <p><strong>Warehouse ID:</strong> {{ packages.whid }}</p>
+    <p><strong>Destination:</strong> ({{packages.dest_x}}, {{packages.dest_y}})</p>
+</div>
+{%else%}
+<p>The package doesn't exist! Please <a href="">re-enter</a> the Package Number!</p>
+{%endif%}
+
+<br>
+<a href="{{request.path}}">Back</a>
+{% endblock %}

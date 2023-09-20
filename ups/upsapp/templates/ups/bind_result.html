@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Associate package Success!</h1>
+<div class="ups-form">
+    {%if packages%}
+    <div style="margin-left:20px;margin-top:20px">
+        <h3>The Package is in <i style="font-weight: bold; color: blue;">{{ packages.status }}</i> status:
+        </h3>
+        <p><strong>Package ID:</strong> {{ packages.packageid}}</p>
+        <p><strong>Package Name:</strong> {{ packages.packagename }}</p>
+        <p><strong>Warehouse ID:</strong> {{ packages.whid }}</p>
+        <p><strong>Destination:</strong> ({{packages.dest_x}}, {{packages.dest_y}})</p>
+    </div>
+    {%else%}
+    <p>The package doesn't match or doesn't exist! <br> Or has been associated! <br> Please <a href="">re-enter</a> the
+        Package
+        Number!</p>
+    {%endif%}
+</div>
+<br>
+<br>
+
+{%if packages%}
+<a class="ups-button" href="{% url 'packages' %}">Check Your package list!</a>
+{%else%}
+<a class="ups-button" href="{{request.path}}">Back</a>
+{%endif%}
+{% endblock %}

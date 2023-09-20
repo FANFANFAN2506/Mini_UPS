@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Update Failed!</h1>
+<div class="ups-form">
+    <p>Sorry the Package is in <i style="font-weight: bold; color: blue;">delivering</i> or <i
+            style="font-weight: bold; color: blue;">arrived</i> You cannot modify!</p>
+</div>
+<br>
+<br>
+<p>Check the package status<a class="ups-button" href="{%url 'package-detail' packid%}">HERE!</a></p>
+{% endblock %}

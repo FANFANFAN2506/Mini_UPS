@@ -1,0 +1,117 @@
+Running main() from gmock_main.cc
+[==========] Running 53 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 53 tests from Lite
+[ RUN      ] Lite.AllLite1
+[       OK ] Lite.AllLite1 (0 ms)
+[ RUN      ] Lite.AllLite2
+[       OK ] Lite.AllLite2 (0 ms)
+[ RUN      ] Lite.AllLite3
+[       OK ] Lite.AllLite3 (0 ms)
+[ RUN      ] Lite.AllLite5
+[       OK ] Lite.AllLite5 (0 ms)
+[ RUN      ] Lite.AllLite6
+[       OK ] Lite.AllLite6 (0 ms)
+[ RUN      ] Lite.AllLite7
+[       OK ] Lite.AllLite7 (1 ms)
+[ RUN      ] Lite.AllLite8
+[       OK ] Lite.AllLite8 (0 ms)
+[ RUN      ] Lite.AllLite9
+[       OK ] Lite.AllLite9 (0 ms)
+[ RUN      ] Lite.AllLite10
+[       OK ] Lite.AllLite10 (0 ms)
+[ RUN      ] Lite.AllLite11
+[       OK ] Lite.AllLite11 (0 ms)
+[ RUN      ] Lite.AllLite12
+[       OK ] Lite.AllLite12 (0 ms)
+[ RUN      ] Lite.AllLite13
+[       OK ] Lite.AllLite13 (0 ms)
+[ RUN      ] Lite.AllLite14
+[       OK ] Lite.AllLite14 (0 ms)
+[ RUN      ] Lite.AllLite15
+[       OK ] Lite.AllLite15 (0 ms)
+[ RUN      ] Lite.AllLite16
+[       OK ] Lite.AllLite16 (0 ms)
+[ RUN      ] Lite.AllLite17
+[       OK ] Lite.AllLite17 (0 ms)
+[ RUN      ] Lite.AllLite18
+[       OK ] Lite.AllLite18 (0 ms)
+[ RUN      ] Lite.AllLite19
+[       OK ] Lite.AllLite19 (0 ms)
+[ RUN      ] Lite.AllLite20
+[       OK ] Lite.AllLite20 (0 ms)
+[ RUN      ] Lite.AllLite21
+[       OK ] Lite.AllLite21 (0 ms)
+[ RUN      ] Lite.AllLite22
+[       OK ] Lite.AllLite22 (0 ms)
+[ RUN      ] Lite.AllLite23
+[       OK ] Lite.AllLite23 (0 ms)
+[ RUN      ] Lite.AllLite24
+[       OK ] Lite.AllLite24 (0 ms)
+[ RUN      ] Lite.AllLite25
+[       OK ] Lite.AllLite25 (0 ms)
+[ RUN      ] Lite.AllLite26
+[       OK ] Lite.AllLite26 (0 ms)
+[ RUN      ] Lite.AllLite27
+[       OK ] Lite.AllLite27 (0 ms)
+[ RUN      ] Lite.AllLite28
+[       OK ] Lite.AllLite28 (1 ms)
+[ RUN      ] Lite.AllLite29
+[       OK ] Lite.AllLite29 (0 ms)
+[ RUN      ] Lite.AllLite32
+[       OK ] Lite.AllLite32 (0 ms)
+[ RUN      ] Lite.AllLite33
+[       OK ] Lite.AllLite33 (0 ms)
+[ RUN      ] Lite.AllLite34
+[       OK ] Lite.AllLite34 (0 ms)
+[ RUN      ] Lite.AllLite35
+[       OK ] Lite.AllLite35 (0 ms)
+[ RUN      ] Lite.AllLite36
+[       OK ] Lite.AllLite36 (0 ms)
+[ RUN      ] Lite.AllLite37
+[       OK ] Lite.AllLite37 (0 ms)
+[ RUN      ] Lite.AllLite38
+[       OK ] Lite.AllLite38 (0 ms)
+[ RUN      ] Lite.AllLite39
+[       OK ] Lite.AllLite39 (0 ms)
+[ RUN      ] Lite.AllLite40
+[       OK ] Lite.AllLite40 (0 ms)
+[ RUN      ] Lite.AllLite41
+[       OK ] Lite.AllLite41 (0 ms)
+[ RUN      ] Lite.AllLite42
+[       OK ] Lite.AllLite42 (0 ms)
+[ RUN      ] Lite.AllLite43
+[       OK ] Lite.AllLite43 (0 ms)
+[ RUN      ] Lite.AllLite44
+PASS
+[       OK ] Lite.AllLite44 (0 ms)
+[ RUN      ] Lite.AllLite45
+[       OK ] Lite.AllLite45 (0 ms)
+[ RUN      ] Lite.AllLite46
+[       OK ] Lite.AllLite46 (0 ms)
+[ RUN      ] Lite.AllLite47
+[       OK ] Lite.AllLite47 (0 ms)
+[ RUN      ] Lite.MapCrash
+[       OK ] Lite.MapCrash (0 ms)
+[ RUN      ] Lite.CorrectEnding
+[       OK ] Lite.CorrectEnding (0 ms)
+[ RUN      ] Lite.DebugString
+[       OK ] Lite.DebugString (0 ms)
+[ RUN      ] Lite.EnumValueToName
+[       OK ] Lite.EnumValueToName (0 ms)
+[ RUN      ] Lite.NestedEnumValueToName
+[       OK ] Lite.NestedEnumValueToName (0 ms)
+[ RUN      ] Lite.EnumNameToValue
+[       OK ] Lite.EnumNameToValue (0 ms)
+[ RUN      ] Lite.NestedEnumNameToValue
+[       OK ] Lite.NestedEnumNameToValue (0 ms)
+[ RUN      ] Lite.AliasedEnum
+[       OK ] Lite.AliasedEnum (0 ms)
+[ RUN      ] Lite.CodedInputStreamRollback
+[       OK ] Lite.CodedInputStreamRollback (0 ms)
+[----------] 53 tests from Lite (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 53 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 53 tests.
+PASS protobuf-lite-test (exit status: 0)

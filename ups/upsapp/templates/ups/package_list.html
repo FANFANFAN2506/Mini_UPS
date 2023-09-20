@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Package List</h1>
+<div class="packagelist">
+    <h2>Here are Your packages</h2>
+    {% if owned_packages %}
+    <ul>
+        {% for pack in owned_packages %}
+        <li>
+            <a class="package-list" href="{{pack.get_absolute_url}}" class="highlight-link">PackageID:
+                {{pack.packageid}}</a>
+            <p>Package Name: <i>"{{pack.packagename}}"</i>; Status: <i>{{pack.status}}</i></p>
+        </li>
+        {% endfor %}
+    </ul>
+    {%else%}
+    <p>You don't have any packages linked to your account.</p>
+    <br>
+    <p>Track a package <a href="{% url 'package-find'%}">HERE</a></p>
+    <p>Associate a package <a href="{% url 'package-bind'%}">HERE</a></p>
+    {% endif %}
+</div>
+{% endblock %}

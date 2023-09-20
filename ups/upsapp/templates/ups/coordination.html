@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Coordinate System Example</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        // 设置线条颜色
+        context.strokeStyle = "#000000";
+
+        // 绘制坐标轴
+        context.beginPath();
+        context.moveTo(50, 50);
+        context.lineTo(50, 450);
+        context.lineTo(450, 450);
+        context.stroke();
+
+        // 绘制x轴坐标
+        for (var i = 0; i <= 10; i++) {
+            context.beginPath();
+            context.moveTo(50 + i * 40, 450);
+            context.lineTo(50 + i * 40, 460);
+            context.stroke();
+
+            context.fillStyle = "#000000";
+            context.fillText(i, 50 + i * 40 - 5, 475);
+        }
+
+        // 绘制y轴坐标
+        for (var i = 0; i <= 10; i++) {
+            context.beginPath();
+            context.moveTo(50, 450 - i * 40);
+            context.lineTo(40, 450 - i * 40);
+            context.stroke();
+
+            context.fillStyle = "#000000";
+            context.fillText(i, 25, 450 - i * 40 + 5);
+        }
+
+        // 绘制点
+        context.beginPath();
+        context.fillStyle = "#FF0000";
+        context.arc(170, 250, 5, 0, 2 * Math.PI, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "#00FF00";
+        context.arc(250, 330, 5, 0, 2 * Math.PI, false);
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "#0000FF";
+        context.arc(350, 150, 5, 0, 2 * Math.PI, false);
+        context.fill();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Tracking an existing package!</h1>
+<div class="ups-form">
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label class="trackingprompt" for="trackingnum">Input Your Tracking Number:</label></td>
+                <td>{{ form.trackingnum }}</td>
+            </tr>
+        </table>
+        <input class="ups-button" type="submit" value="Track >">
+    </form>
+</div>
+
+
+
+{% endblock %}

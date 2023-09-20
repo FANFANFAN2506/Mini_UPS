@@ -1,0 +1,68 @@
+syntax = "proto2";
+message UTAConnect{
+  required int64 worldid = 1;
+}
+
+message AUConnected{
+  required int64 worldid = 1;
+}
+
+message Desti_loc{
+  required int64 x = 1;
+  required int64 y = 2;
+}
+
+message ATURequestPickUp{
+  required string product_name = 1;
+  required int64 packageid = 2;
+  optional string ups_account = 3;
+  required int64 whid = 4;
+  required Desti_loc destination = 5;
+  required int64 seqnum = 6;
+}
+
+message UTAArrived{
+ 	repeated int64 packageid = 1;
+  required int64 truckid = 2;
+  required int64 whid = 3;
+ 	required int64 seqnum = 4;
+}
+
+message ATULoaded{
+  repeated int64 packageid = 1;
+  required int64 truckid = 2;
+  required int64 seqnum = 3; 
+}
+
+message UTAOutDelivery{
+  required int64 packageid = 1;
+  required int64 x = 2;
+  required int64 y = 3;
+  required int64 seqnum = 4; 
+}
+
+message UTADelivered{
+  required int64 packageid = 1;
+  required int64 seqnum = 2; 
+}
+
+message AUErr{
+  required string err = 1;
+  required int64 originseqnum = 2;
+  required int64 seqnum = 3;
+}
+
+message ATUCommands{
+  repeated ATURequestPickUp topickup = 1;	
+  repeated ATULoaded loaded = 2;
+  repeated AUErr err = 3;
+  repeated int64 acks = 4;
+}
+
+message UTACommands{
+  repeated UTAArrived arrive = 1;
+  repeated UTAOutDelivery todeliver = 2;
+  repeated UTADelivered delivered = 3;
+  repeated AUErr err = 4;
+  repeated int64 acks = 5;
+}

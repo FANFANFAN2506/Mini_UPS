@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+<h1>Selected Shipment:</h1>
+<h2 class="ups-subheading">Is this the order you want to change the destination?</h2>
+<div class="ups-package-info">
+    <p class="ups-package-info-item"><span class="ups-label">Package ID:</span> {{ packages.packageid }}</p>
+    <p class="ups-package-info-item"><span class="ups-label">Package Name:</span> {{ packages.packagename }}</p>
+    <p class="ups-package-info-item"><span class="ups-label">Warehouse ID:</span> {{ packages.whid }}</p>
+    <p class="ups-package-info-item"><span class="ups-label">Current Destination:</span> ({{ packages.dest_x }},
+        {{ packages.dest_y }})</p>
+</div>
+<h2 class="ups-subheading">New Address:</h2>
+<form action="" method="post" class="ups-form">
+    {% csrf_token %}
+    <table class="ups-form-table">
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit" class="ups-button" />
+</form>
+<a href="{{ packages.get_absolute_url }}">Back</a>
+{% endblock %}

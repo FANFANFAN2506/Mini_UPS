@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+{% block title%}
+MiniUPS
+{% endblock %}
+{% block content %}
+<h1>Welcome {{user.get_username}}</h1>
+<div>
+    <h3>Thanks for using our MiniUPS to track Packages!</h3>
+    <p style="font-size:x-large">You can do the following using our Website:</p>
+    <ul style="font-size: large;">
+        <li>View all your <b>Packages</b> <a href="{%url 'packages' %}">Here</a></li>
+        <br>
+        <li>Track Your Package by specifying the <b>Package Tracking number</b></li>
+        <br>
+    </ul>
+</div>
+<div class="adver_contain">
+    <h3 class="adver">Your Annual Report:</h3>
+    <h4 class="adver">Shipment Records:</h4>
+    <div class="adver">You have owned a total of <b class="adver">{{user_order_num}}</b> shipments!</div>
+    <div class="adver">The average shipments placed by all users is <b class="adver">{{average_shipment}}</b>!</div>
+    <br>
+    <h4 class="adver">Destination Records:</h4>
+    <div class="adver">You have delivered to <b class="adver">{{user_order_num}}</b> different places!</div>
+    <div class="adver">The average destination of all users is <b class="adver">{{average_dest}}</b>!</div>
+</div>
+
+{% endblock %}

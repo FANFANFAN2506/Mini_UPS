@@ -1,0 +1,137 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Package detail{% endblock %}
+
+{% block content %}
+<h1>Package detail</h1>
+
+
+<div class="parent">
+    <div class="detail">
+        {% if packages %}
+        <div class="ups-section">
+            <h3 class="ups-subheading">The Package is in <span class="ups-status">{{ packages.status }}</span> status:
+            </h3>
+            <p class="ups-text"><strong>Package ID:</strong> {{ packages.packageid }}</p>
+            <p class="ups-text"><strong>Package Name:</strong> {{ packages.packagename }}</p>
+            <p class="ups-text"><strong>Warehouse ID:</strong> {{ packages.whid }}</p>
+            <p class="ups-text"><strong>Destination:</strong> ({{ packages.dest_x }}, {{ packages.dest_y }})&nbsp;&nbsp;
+                {%if if_modify%}
+                <a class="ups-link" href="{% url 'update' packages.packageid %}">Update the address</a>
+                {% endif%}
+            </p>
+        </div>
+        <canvas class="map" id="myCanvas" width="150" height="150"></canvas>
+        <script>
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+            const noTruck = "{{no_truck}}"
+            const x1 = 20;
+            const y1 = 20;
+            const x2 = 63;
+            const y2 = 100;
+
+            const cpx = (x1 + x2) / 2;
+            const cpy = (y1 + y2) / 2 - 30;
+
+            if (noTruck == "False") {
+                ctx.beginPath();
+                ctx.fillStyle = 'blue';
+                ctx.arc(x1, y1, 3, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.fillText(`({{t_x}}, {{t_y}})`, x1 - 20, y1 + 20);
+            }
+            ctx.beginPath();
+            ctx.fillStyle = 'blue';
+            ctx.arc(x2, y2, 3, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillText(`({{p_x}}, {{p_y}})`, x2 + 10, y2 + 20);
+
+            if (noTruck == "False") {
+                ctx.strokeStyle = 'blue';
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.quadraticCurveTo(cpx, cpy, x2, y2);
+                ctx.stroke();
+
+                const angle = Math.atan2(y2 - cpy, x2 - cpx);
+                const arrowLength = 10;
+                ctx.fillStyle = 'blue';
+                ctx.beginPath();
+                ctx.moveTo(x2, y2);
+                ctx.lineTo(x2 - arrowLength * Math.cos(angle - Math.PI / 6), y2 - arrowLength * Math.sin(angle - Math.PI / 6));
+                ctx.lineTo(x2 - arrowLength * Math.cos(angle + Math.PI / 6), y2 - arrowLength * Math.sin(angle + Math.PI / 6));
+                ctx.fill();
+            }
+
+        </script>
+        {% else %}
+        <div class="ups-section">
+            <p class="ups-text">The package doesn't exist! Please <a class="ups-link"
+                    href="{{ request.path }}">re-enter</a>
+                the Package Number!</p>
+        </div>
+        {% endif %}
+        <div class="ups-section">
+            {% if logged %}
+            <a class="ups-button" href="{% url 'packages' %}">Back</a>
+            {% else %}
+            <a class="ups-button" href="{{ request.path }}">Back</a>
+            {% endif %}
+        </div>
+    </div>
+    {%if packages%}
+    <div class="container">
+        <div class="status-box">
+            {% if packages.status == "picking"%}
+            <div class="text current">Picking</div>
+            {%else%}
+            <div class="text">Picking</div>
+            {%endif%}
+            <div class="circle">1</div>
+        </div>
+        <div class="connector">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="status-box">
+            {% if packages.status == "loading"%}
+            <div class="text current">Loading</div>
+            {%else%}
+            <div class="text">Loading</div>
+            {%endif%}
+            <div class="circle">2</div>
+        </div>
+        <div class="connector">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="status-box">
+            {% if packages.status == "delivering"%}
+            <div class="text current">Deliverying</div>
+            {%else%}
+            <div class="text">Deliverying</div>
+            {%endif%}
+            <div class="circle">3</div>
+        </div>
+        <div class="connector">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="status-box">
+            {% if packages.status == "arrived"%}
+            <div class="text current">Arrived</div>
+            {%else%}
+            <div class=" text">Arrived</div>
+            {%endif%}
+            <div class="circle">4</div>
+        </div>
+    </div>
+    {%endif%}
+</div>
+
+
+{% endblock %}
