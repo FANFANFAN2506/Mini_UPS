@@ -1,6 +1,5 @@
 # Mini_UPS
-## This is the Mini-UPS completed by Fan Yang and Xincheng Zhong for 23Spring ECE568
-## The protocol is designed based on GDP and modified based on the agreement of a group of 10. 
+### This is the Mini-UPS completed by Fan Yang and Xincheng Zhong for 23Spring ECE568 <br> The protocol is designed based on GDP and modified based on the agreement of a group of 10. 
 
 # Differentiation:
 
